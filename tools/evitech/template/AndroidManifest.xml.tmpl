@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- AndroidManifest.xml.tmpl — placeholders replaced per build -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="__PACKAGE__">
+
+    __INTERNET_PERMISSION__
+
+    <application
+        android:label="__APP_NAME__"
+        android:icon="@mipmap/ic_launcher"
+        android:theme="@android:style/__THEME__"
+        android:usesCleartextTraffic="true"
+        android:allowBackup="true">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:screenOrientation="__ORIENTATION__"
+            android:configChanges="orientation|screenSize|keyboardHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

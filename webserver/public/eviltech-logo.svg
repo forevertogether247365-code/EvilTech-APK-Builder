@@ -1,0 +1,149 @@
+<svg
+  width="420"
+  height="120"
+  viewBox="0 0 420 120"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-label="EvilTech APK Builder"
+>
+  <defs>
+    <linearGradient id="evilGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C0FF3D"/>
+      <stop offset="50%" stop-color="#00FF66"/>
+      <stop offset="100%" stop-color="#008E11"/>
+    </linearGradient>
+
+    <linearGradient id="evilPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A78BFF"/>
+      <stop offset="100%" stop-color="#7C5CFF"/>
+    </linearGradient>
+
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- ICON -->
+  <g transform="translate(8 10)" filter="url(#glow)">
+
+    <!-- Left code bracket -->
+    <path
+      d="M42 25 L15 50 L42 75"
+      fill="none"
+      stroke="url(#evilPurple)"
+      stroke-width="8"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <!-- Right code bracket -->
+    <path
+      d="M78 25 L105 50 L78 75"
+      fill="none"
+      stroke="url(#evilPurple)"
+      stroke-width="8"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <!-- Evil E -->
+    <path
+      d="M63 18
+         H91
+         L81 29
+         H64
+         C54 29 49 36 49 50
+         C49 64 54 71 64 71
+         H81
+         L91 82
+         H63
+         C43 82 34 70 34 50
+         C34 30 43 18 63 18Z"
+      fill="url(#evilGreen)"
+    />
+
+    <!-- Middle E bar -->
+    <path
+      d="M48 44 H76 L66 55 H48Z"
+      fill="#0B0E11"
+    />
+
+    <!-- Code slash -->
+    <path
+      d="M67 36 L59 64"
+      stroke="#7C5CFF"
+      stroke-width="5"
+      stroke-linecap="round"
+    />
+
+    <!-- Tiny code symbols -->
+    <path
+      d="M75 42 L70 50 L75 58"
+      fill="none"
+      stroke="#C0FF3D"
+      stroke-width="4"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <path
+      d="M83 42 L88 50 L83 58"
+      fill="none"
+      stroke="#C0FF3D"
+      stroke-width="4"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </g>
+
+  <!-- EVILTECH WORDMARK -->
+  <text
+    x="125"
+    y="54"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="32"
+    font-weight="900"
+    letter-spacing="-1"
+  >
+    <tspan fill="#00FF66">EVIL</tspan><tspan fill="#F2F2F2">TECH</tspan>
+  </text>
+
+  <!-- APK BUILDER -->
+  <text
+    x="127"
+    y="78"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="12"
+    font-weight="600"
+    letter-spacing="4"
+    fill="#C0FF3D"
+  >
+    APK BUILDER
+  </text>
+
+  <!-- Small divider -->
+  <rect
+    x="127"
+    y="88"
+    width="110"
+    height="2"
+    rx="1"
+    fill="url(#evilPurple)"
+  />
+
+  <!-- Tagline -->
+  <text
+    x="127"
+    y="106"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="8"
+    letter-spacing="0.5"
+    fill="#7A8290"
+  >
+    TURN YOUR CODE INTO AN ANDROID APP
+  </text>
+</svg>

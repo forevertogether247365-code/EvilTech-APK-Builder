@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: eviltech-apk-builder
+    runtime: docker
+    plan: starter
+    healthCheckPath: /health
+    envVars:
+      - key: EVITECH_DB_URL
+        fromDatabase: eviltech
+
+databases:
+  - name: eviltech
+    databaseName: eviltech
+    plan: free

@@ -1,0 +1,11 @@
+{
+  "name": "eviltech-apk-builder",
+  "version": "1.0.0",
+  "description": "EvilTech APK Builder — paste HTML/CSS/JS, get a real Android APK.",
+  "type": "module",
+  "scripts": {
+    "start": "node --experimental-strip-types --no-warnings=ExperimentalWarning webserver/index.ts"
+  },
+  "engines": { "node": ">=22.0.0" },
+  "dependencies": { "express": "^4.21.0", "pg": "^8.13.0" }
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Evitech APK Builder</title>
+  <meta name="theme-color" content="#0B0E11" />
+  <meta name="description" content="Turn your code into an Android app. Paste HTML, CSS and JavaScript, customize, and download a real APK." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23008E11'/%3E%3Ctext x='32' y='46' font-family='Arial' font-size='36' font-weight='bold' fill='%23C0FF3D' text-anchor='middle'%3EE%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="app.css?v=3" />
+</head>
+<body>
+  <nav class="nav">
+    <a class="brand" href="#/home">
+      <span class="brand-badge">E</span>
+      <span class="brand-name">Evitech <em>APK Builder</em></span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#/home" data-nav="home">Home</a>
+      <a href="#/build" data-nav="build">Builder</a>
+      <a href="#/dashboard" data-nav="dashboard">My Apps</a>
+    </div>
+  </nav>
+
+  <main id="view"></main>
+
+  <footer class="footer">
+    <span>Evitech APK Builder</span>
+    <span class="dot-sep">·</span>
+    <span>Turn your code into an Android app.</span>
+  </footer>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="app.js?v=4"></script>
+</body>
+</html>
