@@ -422,7 +422,19 @@ app.use((req, res) => {
 });
 
 /* ────────────────────────── boot ────────────────────────── */
-initDb().then(() => { cleanupOld(); pump(); console.log('[evitech] db ready, build worker armed'); })
-  .catch(e => { console.error('[evitech] db init failed:', e.message); process.exit(1); });
+async function boot(attempt = 1) {
+  try {
+    await initDb();
+    cleanupOld(); pump();
+    console.log('[evitech] db ready, build worker armed');
+  } catch (e) {
+    const host = (() => { try { return new URL(process.env.EVITECH_DB_URL || '').host; } catch { return '(invalid url)'; } })();
+    console.error(`[evitech] db init failed (attempt ${attempt}, host: ${host}):`, e.message);
+    if (attempt < 5) return setTimeout(() => boot(attempt + 1), 5000 * attempt);
+    console.error('[evitech] giving up after 5 attempts — check EVITECH_DB_URL. It must be a full postgresql:// connection string.');
+    process.exit(1);
+  }
+}
+boot();
 
 app.listen(PORT, '0.0.0.0', () => console.log(`[evitech] listening on :${PORT}`));
