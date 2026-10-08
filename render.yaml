@@ -6,11 +6,4 @@ services:
     healthCheckPath: /health
     envVars:
       - key: EVITECH_DB_URL
-        fromDatabase:
-          name: eviltech
-          property: connectionString
-
-databases:
-  - name: eviltech
-    databaseName: eviltech
-    plan: free
+        sync: false
