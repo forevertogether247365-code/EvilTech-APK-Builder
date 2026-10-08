@@ -11,6 +11,7 @@ RUN mkdir -p /opt/android-build && cd /opt/android-build \
   && unzip -q -o pf.zip 'android-34/*' && rm pf.zip
 
 WORKDIR /app
+ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 COPY package.json ./
 RUN npm install --no-audit --no-fund
 COPY . .

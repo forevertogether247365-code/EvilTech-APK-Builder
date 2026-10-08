@@ -84,9 +84,13 @@ if [ -f "$WORK/user/index.html" ]; then cp "$WORK/user/index.html" app/assets/ww
 [ -f "$WORK/user/style.css" ] && cp "$WORK/user/style.css" app/assets/www/style.css
 [ -f "$WORK/user/script.js" ] && cp "$WORK/user/script.js" app/assets/www/script.js
 
-# ── 6. compile java → dex ──
-javac -source 8 -target 8 -nowarn -classpath "$PLATFORM_JAR" \
-      -d classes "app/src/$PKG_PATH/MainActivity.java" 2>&1 | grep -v "bootstrap class path" || true
+# ── 6. compile java → dex (UTF-8: containers often default to ASCII) ──
+JAVAC_OUT=$(javac -encoding UTF-8 -source 8 -target 8 -nowarn -classpath "$PLATFORM_JAR" \
+      -d classes "app/src/$PKG_PATH/MainActivity.java" 2>&1 | grep -v "bootstrap class path" || true)
+if echo "$JAVAC_OUT" | grep -q "error:"; then
+  echo "JAVAC: $JAVAC_OUT" >&2
+  fail "app code compilation failed: $(echo "$JAVAC_OUT" | grep -m1 'error:' | cut -c1-160)"
+fi
 [ -d classes ] && [ -n "$(find classes -name '*.class')" ] || fail "java compilation failed"
 
 "$BT_DIR/d8" --release --lib "$PLATFORM_JAR" --min-api 21 --output dex $(find classes -name '*.class') || fail "dexing failed"
