@@ -11,7 +11,7 @@ import { fileURLToPath } from 'node:url';
 import { execFile } from 'node:child_process';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const PORT = Number(process.env.WEBSERVER_PORT ?? 3001);
+const PORT = Number(process.env.PORT ?? process.env.WEBSERVER_PORT ?? 3001);
 const ROOT = path.resolve(__dirname, '..');
 const PUBLIC_DIR = path.join(__dirname, 'public');
 const TEMPLATES = path.join(ROOT, 'tools', 'evitech', 'template');
